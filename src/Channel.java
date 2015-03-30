@@ -7,7 +7,9 @@ public class Channel {
 	Channel (int t){
 		type = t ; 
 	}
-
+	public boolean isArmed(){
+		return isArmed;
+	}
 	public void toggle () {
 		isArmed = isArmed  ?  false : true ;		
 	}

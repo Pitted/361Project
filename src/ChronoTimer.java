@@ -16,7 +16,9 @@ public class ChronoTimer {
 	private static int [] numbers ;    // this field holds the num of the competitors that have been 
 	
 	
-	
+	public static boolean getPower(){
+		return power;
+	}
 	public static void powerOn()
 	{
 		power = true ;
@@ -71,7 +73,11 @@ public class ChronoTimer {
 		if(index>channels.length||index<1) throw new IllegalArgumentException(channels.length + " Channels");
 		channels[index-1].connectSensor(new Sensor(type));
 	}
-
+	
+	public static boolean isArmed(int i){
+		return channels[i-1].isArmed();
+	}
+	
 	public static void armChannel(int index)
 	{
 		if(index>channels.length) throw new IllegalArgumentException (channels.length + " Channels");
